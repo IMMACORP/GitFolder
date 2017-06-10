@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>pro_manage_user_dovandung</display-name>
+  
+  <filter>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-class>manageuser.utils.EncodingFilter
+		</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+    <display-name>LoginFilter</display-name>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>manageuser.utils.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  
+  <servlet>
+    <display-name>Login</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>manageuser.controllers.LoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ExportCSVController</display-name>
+    <servlet-name>ExportCSVController</servlet-name>
+    <servlet-class>manageuser.controllers.ExportCSVController
+		</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExportCSVController</servlet-name>
+    <url-pattern>/ExportCSV.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>LogoutController</display-name>
+    <servlet-name>LogoutController</servlet-name>
+    <servlet-class>manageuser.controllers.LogoutController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutController</servlet-name>
+    <url-pattern>/Logout.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ListUserController</display-name>
+    <servlet-name>ListUserController</servlet-name>
+    <servlet-class>manageuser.controllers.ListUserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListUserController</servlet-name>
+    <url-pattern>/ListUser.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>AddUserInput</display-name>
+    <servlet-name>AddUserInput</servlet-name>
+    <servlet-class>manageuser.controllers.AddUserInputController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddUserInput</servlet-name>
+    <url-pattern>/AddUserInput.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>AddUserConfirm</display-name>
+    <servlet-name>AddUserConfirm</servlet-name>
+    <servlet-class>manageuser.controllers.AddUserConfirmController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddUserConfirm</servlet-name>
+    <url-pattern>/AddUserConfirm.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>SuccessController</display-name>
+    <servlet-name>SuccessController</servlet-name>
+    <servlet-class>manageuser.controllers.SuccessController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SuccessController</servlet-name>
+    <url-pattern>/AddSuccess.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ViewUserDetail</display-name>
+    <servlet-name>ViewUserDetail</servlet-name>
+    <servlet-class>manageuser.controllers.DetailUserInforController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewUserDetail</servlet-name>
+    <url-pattern>/ViewDetailUser.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>SystemErrorController</display-name>
+    <servlet-name>SystemErrorController</servlet-name>
+    <servlet-class>manageuser.controllers.SystemErrorController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SystemErrorController</servlet-name>
+    <url-pattern>/SystemError.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>DeleteUserController</display-name>
+    <servlet-name>DeleteUserController</servlet-name>
+    <servlet-class>manageuser.controllers.DeleteUserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteUserController</servlet-name>
+    <url-pattern>/DeleteUser.do</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>/jsp/ADM001.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
